@@ -136,15 +136,7 @@ class BandwidthMonitor(app_manager.RyuApp):
             totalDropped += stat.rx_dropped
         self.bwstats.addDroppedPktStat(name, totalDropped)
 
-        # ASSIGNMENT 2:
-        # If the switch reporting the statistic is an edge switch, and the
-        # port connects to a host, log the statistic to bwstats, using
-        # self.bwstats.addHostBwStat(hostname, transmitted bytes, received bytes)
-        # (Hint: you can look up the switch or host connected to a port using
-        #  self.topo.ports[switch name][port number])
-
-        # [ ADD YOUR CODE HERE ]
-			
+        # 
 	total_transmitted = 0
 	total_received = 0
 
