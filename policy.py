@@ -68,18 +68,7 @@ class AdaptivePolicy(object):
         return self.build(self.topo)
 
     def minUtilization(self):
-        # ASSIGNMENT 4:
-        # This function should return the core switch that
-        # is least utilized.  We will use this to greedily
-        # assign hosts to core switches based on the amount
-        # of traffic they are receiving and balance load
-        # on the core switches.
-
-        # Use the dictionary self.utilization
-        # (key = switch name, value = utilization in bytes)
-        # to find the least utilized switch.
-
-        # [REPLACE WITH YOUR CODE]		
+        # 		
 	return min(self.utilization, key=self.utilization.get)
 
     def redistribute(self):
@@ -161,18 +150,7 @@ class StaticPolicy(object):
                     'type' : 'dst'
                 })
 
-        # ASSIGNMENT 3:
-        # Rules to Install:
-        #   On the Edge Switches: output the appropriate port if the destination
-        #   is a neighboring host (that is, don't send it up to a core switch).
-        #   Otherwise, send to the core switch for that destination's vlan
-        #   ("upward").  If a host has multiple VLANs, you can use the first
-        #   in the list of VLANs.
-        #   (Hint: you can look up the port of a neighboring host using
-        #           topo.ports[edge switch name][host name]
-        #   (Hint: to find a the VLAN, use topo.getVlanCore(vlanId))
-
-        # [ADD YOUR CODE HERE]
+        # 
 	
 	for edge in topo.edgeSwitches.values():
             routingTable[edge.dpid] = []
